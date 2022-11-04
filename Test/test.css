@@ -1,0 +1,29 @@
+/* Tipos de Display: nonw, inline, block, inline-block */
+
+body {
+
+    color: #22577a;
+    background-color: #C7F9CC;
+}
+
+[class^="box"] {
+    background-color: #57CC99;
+}
+.box-0 {
+    display: none;
+}
+
+.box-3 p, .box-4 p {
+    display: inline-block;
+}
+
+.box-5, .box-6, .box-5 p, .box-6 p {
+    display: inline;
+}
+
+.x-centered {
+    background-color: aqua;
+    height: 50px;
+    width: 25vw;
+    margin: auto;
+}

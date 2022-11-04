@@ -1,0 +1,611 @@
+/* awwwards: página interesante para ver webs con diseños creativos*/
+/* Formato jpg: no permite trasparencia del fondo de las imágenes // formato png: permite la trasparencia*/
+/* icononos gratuitos para enlazar desde la web: fontawesomeicons*/
+/* bancos de imágenes abiertas: unsplash, pixabay*/
+/* Ejemplos de páginas webs: dribbble.com*/
+
+/**SELECTORES**/
+
+        /* * : el asterisco apunta a todas las etiquetas del archivo */
+
+        * {
+            background-color: aqua;
+            margin: 0;
+        }
+
+    /* .class : con el punto, apuntamos a las partes que tienen como clase el nombre dado */
+
+        .class_example {
+            color: blueviolet;
+        }
+
+    /* #id : con la almohadilla apuntamos a la etiqueta que tiene como id el nombre dado */
+
+        #is_example {
+            color: black;
+        }
+
+    /* nombre_de_etiqueta : hace referencia a todas las etiquetas del mismo tipo */
+
+        h1 {
+            font: 100;
+        }
+
+    /* [atributo=valor] : hace referencia a los elementos que tengan atributos con el valor dado */
+
+        [type=submit] {
+            background-color: aliceblue;
+        }
+
+    /* [atributo ^= valor] : hace referencia a los elementos que tengan atributos que EMPIECEN con el valor dado */
+
+        [class ^=table] {
+            background-color: aliceblue;
+        }
+
+/*COMBINACIÓN DE SELECTORES*/
+
+    /* Por jerarquía : se añade un espacio " " para determinar quién está dentro de quién. Si le quito el espacio no lo trata como jerarquía sino como info del mismo elemento */
+
+        div a {
+            /*apunta a todos los hipervínculos que estén dentro de div sin tener en cuenta la posición del hipervínculo */
+            text-decoration: none;
+        }
+
+        .class_example span#idspan {
+            /* apunta a los span que tengan como id=idspan y que estén dentro de aquellas etiquetas que tienen clase=class_example */
+            color: aliceblue;
+        }
+
+    /* Por hijo de elemento : se añade un mayor qué ">" para seleccionar a los hijos directos */
+
+        p.class_paragraph>span {
+            /* apunta a los span que son hijos directos de los párrafos con clase=class_paragraph */
+            color: aliceblue;
+        }
+
+    /* Mismas características para diferentes selectores : añadimos una coma "," entre selectores para aplicarle el mismo código */
+
+        p, a {
+            /* aplicará a todos los párrafos y a todos los hipervínculos las características deseadas */
+            color: aliceblue;
+        }
+
+    /* Pseudos */
+        /* pseudo-clases : con ":" establecemos caracteristicas a las que reacciona la página (focus, visited...) */
+            a:hover {
+                color: green;
+            }
+
+        /* pseudo-elementos : con "::" establecemos características a elementos que no existen como tal en HTML (firs letter, before, after)*/
+            p::first-letter {
+                color: pink
+            }
+
+            a::content {
+                image-orientation: flip;
+            }
+
+/**COLORES**/
+
+/* Hay paletas de colores en internet "color palette".Se pueden representar por:    
+
+    1)Nombre : red
+
+    2)RGB (red, green, blue) (máx hasta 255) : rgb(240,200,0)
+
+    3)#Hexadecimal : #FFF523*/
+       
+        h1 {
+            color: red;
+            background-color: rgb(214, 150, 230);
+            border-color: #a41906;
+        }
+
+/*Opacidad de colores (va desde el 0 hasta el 1):
+
+    1) opacity : 0.8
+
+    2) (R,G,B,A) : rgba(241,230,142,0.5) */
+
+
+        h2 {
+            color: rgba(140, 255, 0.5)
+        }
+
+/**IMÁGENES DE FONDO**/
+
+    /* Se puede poner una imágen como fondo de un contenedor */
+
+        div {
+        /* establece la altura del 50% de la pantalla verticalmente */
+            height: 50vh;
+            
+        /* mete la foto como fondo */
+            background-image: url(images/background.jpeg);
+            
+        /* establece la parte de la imagen que queremos que se vea. // valores eje x: left, center, right// valores eje y: top, cente, bottom*/
+            background-position: center bottom;
+            
+        /* fija la imagen a la pantalla para que no le afecte el scroll de la pantalla */
+            background-attachment: fixed;
+
+        /* cuando la imagen es más pequeña que el contenedor donde está, esta se repite. */
+        /* Con esta propiedad podemos controlar la repetición de la imagen*/
+            background-repeat: no-repeat;
+            
+        /*cover: obligamos a la imagen a que cubra todo el div donde está contenida // contain: se asegura de que la imagen quepa en el contenedor*/
+            background-size: cover;
+        }
+
+/**SEPARADORES**/
+
+/*MÁRGENES (de la caja hacia afuera)*/
+       
+        h1 {
+        /*márgenes específicos lado por lado*/
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+        /*margen aplicado a todos los lados*/
+            margin: 10px;
+
+        /*márgenes dos a dos // primer parámetro = márgenes eje y // segundo parámetro= márgenes eje x (laterales) */
+        /*se puede completar con más parámetros siendo cada uno de ellos para cada lado (en sentido horario empezando por arriba)*/
+            margin: 10px 50px;
+
+        /*para centrar elementos en el eje x*/
+            margin: auto;
+
+        }
+
+/*BORDES*/
+        div {
+        /*modifica el estilo de la línea superior, podemos añadirle más características*/
+            border-bottom: #a41906;
+            
+        /*modifica el estilo de la línea superior, podemos añadirle más características*/
+            border-top: #a41906;
+            
+        /*indica el ancho de la línea*/
+            border-width: 5px;
+            
+        /*representa el tipo de línea del borde, en este caso, línea discontinua*/
+            border-style: dashed;
+            
+        /*establece el mismo borde en la caja completa*/
+            border: 5px solid green;
+
+        /*establece bordes redondeados*/
+            border-radius: 3px;
+
+        }
+
+/*PADDING (de la caja hacia adentro)*/
+
+        div {
+        /*márgenes específicos lado por lado*/
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+        /*padding aplicado a todos los lados*/
+            padding: 10px;
+
+        /*padding dos a dos // primer parámetro = padding eje y // segundo parámetro= padding eje x (laterales) */
+        /*se puede completar con más parámetros siendo cada uno de ellos para cada lado (en sentido horario empezando por arriba)*/
+            padding: 10px 50px;
+        }
+
+/**TAMAÑOS**/
+
+/*UNIDADES ABSOLUTAS*/
+
+    /* in, cm, mm : no utilizadas porque son estáticas y no son responsive */
+
+/*UNIDADES RELATIVAS*/
+     
+        div {
+        
+        /* em : relativa al tamaño de letra del elemento (5em = 5 veces el tamaño de la letra del div)*/
+            padding: 5em;
+            
+        /* rem : relativa al tamaño de letra del elemento raíz (el que tiene por defecto el documento. Suele ser 16)*/
+            padding: 5rem;
+        
+        /* px : píxel, relativa a la resolución de la pantalla del dispósitivo */
+            padding: 5px;
+        
+        /* % : relativa a su elemento padre (elemento que está inmediatamente por encima)*/
+            padding: 5%;
+        
+        /* relativo a la altura (height) de la ventana de visualización (viewport) (50vh = 50% de la altura de la ventana) */
+            padding: 50vh;
+        
+        /* relativo al ancho (width) de la ventana de visualización (viewport) (50vw = 50% del ancho de la ventana) */
+            padding: 5vw;
+        }
+
+/**POSICIONAMIENTO**/
+
+/*DISPLAY (define el tipo de caja generada por un elemento*/
+        div {
+        /* hace desaparecer el elemento*/
+            display: none;
+        }
+
+        div {
+        /* establece el elemento como tipo inline (solo coge el espacio estrictamente necesario para incluir el texto que hay dentro).
+        Tener cuidado cuando hay elementos de bloque dentro de otros elementos de bloque (tengo que transformar todo a inline)*/
+            display: inline;
+        }
+
+        div {
+        /* establece el elemento como tipo bloque*/
+            display: block;
+        }
+
+        div {
+        /* establece el elemento como tipo inline pero con propiedades de bloques (esto quiere decir que respeta márgenes y padding dentro de ese inline)*/
+            display: inline-block;
+        }
+
+/*POSITION (determinan cómo se colocan los elementos en la página) */
+        div {
+        /*establecida por defecto. Se apilan unos debajo de otros*/
+            position: static;
+
+        /*relativo a su posición original (posición relativa)*/
+            position: relative;    
+        /*indicar cuanto tiene que moverlo desde la referencia dada*/
+            left/*right, top, bottom*/: 150px;
+
+        /*fija el elemento en un punto de la ventana (posición absoluta)*/
+        /* para que tome como referencia el padre, hay que ponerle al PADRE "position:relative"*/
+            position: absolute;
+            /*indicar a qué distancia tiene que estar respecto a la referencia dada*/
+            left/*right, top, bottom*/: 150px;
+
+        /*lo fija a un punto de la ventana haciendo que aunque se aplique scroll, se mantenga visible*/
+            position: fixed;
+            /*indicar cuanto tiene que moverlo desde la referencia dada*/
+            left/*right, top, bottom*/: 150px;
+
+        /*cambia entre "relative" y "fija" dependiendo de la posición del scroll*/
+            position: sticky;
+            top: 0;/*quiere decir que cuando se aplica scroll y la barra de navegación toca el top, empieza a acompañar a la página
+
+        /*sirve para superponer las capas si se solapan. Cuanto mayor sea el número (también valen nº negativos), más prioridad va a tener ese elemento para verse*/
+            z-index: 1;
+
+        /*controlamos hacia donde flotan los elementos, dejando disponible el hueco que ocupaba antes (es como si no ocuparan espacio)*/
+        /*los elementos con float, solo tienen en cuenta otros elementos con float*/
+            float: right/*left*/;
+            
+        /*Si lo ponemos en el padre que tiene elementos float, respetará a los elementos internos.*/
+            overflow: hidden;
+
+        /*limpia o clarea todos los float y crea una linea nueva*/
+            clear: both;
+        }
+
+/*OVERFLOW (controla el desbordamiento cuando el contenido de un contenedor ocupa más espacio que el propio contenedor)*/
+        div {
+        /*deja invisible lo que queda por fuera del contenedor padre*/
+            overflow: hidden;
+        
+        /*deja visible lo que queda por fuera del contenedor padre*/
+            overflow: visible;
+        
+        /*establece un scroll dentro del contenedor padre para poder mover y ver el contenido interno*/
+            overflow: scroll;
+        }
+
+/*BOX-SIZING (elige la referencia a tener en cuenta para establecer el tamaño de las cajas)*/
+        div {
+        /*Comportamiento por defecto. Tiene en cuenta sólo el contenido y no los bordes y márgenes por lo que se puede salir del contenedor padre.*/
+            box-sizing: content-box;
+
+        /*Tiene en cuenta todos los bordes y márgenes para establecer el tamaño*/
+            box-sizing: border-box;
+        }
+
+/**PROPIEDADES EXTRA**/
+
+/*LISTA*/
+        ul {
+            /*determina cómo se va a representar la marca de la lista (dentro o fuera de li, tipo de marca, si necesita imagen...)*/
+            list-style: inside;
+        }
+
+/*TEXTO*/
+        @font-face { /*establece una fuente personalizada*/
+        /*establece el nombre de mi fuente personalizada*/
+            font-family: "miFuentePersonalizada"; 
+            
+        /*url donde tiene que buscar la fuente*/
+            src: url("archivo-mifuente.ttf"); 
+        }
+
+        p {
+        /*quitar el estilo por defecto de enlaces*/
+            text-decoration: none;
+        
+        /*darle tamaño al texto*/
+            font-size: 1.5em;
+        
+        /* familia de caracteres que se van a utilizar */
+            font-family: Arial, Helvetica, sans-serif;
+           
+        /*establece el tipo de letra entre mayúscula y minúscula */
+            text-transform: capitalize;
+        
+        /*alineación del texto*/
+            text-align: center;
+        
+        /*espaciado entre líneas*/
+            line-height: 1.5rem;
+        
+        /*espacio entre letras*/
+            letter-spacing: 1.2em;
+        
+        /*espacio entre palabras*/
+            word-spacing: 1.2em;
+        
+        /*establece sombras al texto. Datos que necesita: desplazamiento horizontal, desplazamiento vertical, dispersión de sombra, color*/
+            text-shadow: 1px 2px 2px red;
+        }
+
+/**RESPONSIVE**/
+   
+    /*para expresar las reglas que queremos que se cumplan en pantallas <700px. Se ponen al final de la hoja y se pueden hacer varios tramos*/
+        @media only screen and (max-width: 700px) {
+            .container {
+                color: red;
+                border: 1px solid;
+            }
+        }
+
+    /*para expresar las reglas que queremos que se cumplan en pantallas >700px. Se ponen al final de la hoja y se pueden hacer varios tramos*/
+        @media only screen and (min-width: 700px) {
+        }
+
+/**FLEXBOX**/
+
+/*PROPIEDADES CONTENEDOR FLEX*/
+        div {
+        /*activar flexbox en el contenedor. Lo convierte en contenedor flex y sus hijos en elementos flex*/
+            display: flex;
+
+        /*flexbox solo trabaja en una dimensión y hay que especificarla. Por defecto será "row"*/
+            /*establece dirección en fila. Main axis: horizontal / Cross axis: vertical*/
+                flex-direction: row;
+
+            /*establece dirección en columna. Main axis: vertical / Cross axis: horizontal */
+                flex-direction: column;
+
+            /*crea una nueva línea si no hay espacio*/
+                flex-wrap: wrap;
+
+            /*shortcut para establecer flex-direction y flex-wrap en un comando*/
+                flex-flow: column wrap;
+
+            /*darle espaciamiento a los elementos*/
+                gap: 10px;
+
+        /*controlar el posicionamiento en el MAIN AXIS de los elementos*/
+            /*centra los elementos*/
+                justify-content:center;
+            
+            /*establece los elementos al principio (main axis). Es el valor por defecto*/
+                justify-content:flex-start;
+            
+            /*establece los elementos al final*/
+                justify-content:flex-end;
+            
+            /*establece un margen automático solo entre los elementos*/
+                justify-content:space-between;
+            
+            /*establece un margen automático alrededor de los elementos (entre elementos es mayor que en el exterior)*/
+                justify-content:space-around;
+            
+            /*establece un margen automático alrededor de los elementos repartiendo el espacio equitativamete*/
+                justify-content:space-evenly;
+
+
+        /*controlar el posicionamiento en el CROSS AXIS de los elementos*/                    
+            /*centra los elementos*/
+                align-items: center;
+            
+            /*expande los elementos para que tengan el mismo tamaño que el padre. Es el valor por defecto*/
+                align-items: stretch;
+            
+            /*establece los elementos al principio (cross axis)*/
+                align-items: flex-start;
+
+            /*establece los elementos al final (cross axis)*/
+                align-items: flex-end;
+        }
+        
+/*PROPIEDADES ELEMENTO FLEX*/
+        div {
+        /*especifica el factor de crecimiento del elemento si hay espacio. Valor por defecto es 0. Si usamos esta propiedad, no respetará los espacios entre elementos*/
+            flex-grow: 3;
+
+        /*especifica el factor de decrecimiento del elemento si NO hay espacio. Valor por defecto es 1*/
+            flex-shrink: 3;
+
+        /*tamaño base de los elementos a partir del cual crece o decrece. Por defecto es "auto"*/
+            flex-basis: 100px; /*length | auto */
+
+        /*shortcut para las tres propiedades anteriores en ese orden*/
+            flex: 3 3 100px;
+
+        /*establece un orden en el elemento para ordenarlos. No se suele utilizar*/
+            order: 2;
+
+        /*sobrescribe la configuración del padre individualmente. Acepta mismas características que "aling-item"*/
+            align-self: center;
+        }
+
+/**GRID**/
+
+/*PROPIEDADES CONTENEDOR GRID*/
+        div {
+        /*activar grid en el contenedor. Lo convierte en contenedor grid y los hijos son elementos grid*/
+            display: grid;
+            
+            /*grid trabaja en dos dimensiones: rows y columns. Se especifican las dimensiones de la plantilla*/
+                /*establece el patrón de las columnas con las fracciones donde la segunda columna es el doble que la primera*/
+                    grid-template-columns: 1fr 2fr;/*la primera columna tiene un tamaño 1/3 y la segunda 2/3*/
+
+                /*establece el patrón de las filas con las fracciones donde la segunda columna es el doble de la primera y la tercera*/
+                    grid-template-rows: 1fr 2fr 1fr; /*tamaño de primera fila 1/4, segunda 2/4, tercera 1/3*/
+
+                /*dar espacio entre las diferentes rejillas*/
+                    grid-gap: 10px;
+
+                /*para repetir un patrón*/
+                    grid-template-rows: repeat(3/*veces que quiero repetir*/, 2fr 1fr);
+
+                /*establecer tamaños mínimos y máximos con columnas automáticas*/
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /*autofit: ajusta las columnas automáticamente para que cumplan las dimensiones máximas y mínimas*/
+            /*trabajar con áreas*/
+                /*tenemos que establecer una matriz dándole nombres a las diferentes rejillas*/
+                    grid-template-areas: "nav nav ." /*al tener 3 columnas, si quiero que "nav" sólo ocupe 2 columnas, tengo que poner un punto para dejarlo vacío*/
+                                        "content1 content2 content3"; /*crea dos filas y 3 columnas con esos nombres*/
+        }
+
+/*PROPIEDADES ELEMENTO GRID*/
+    /*trabajar con dimensiones*/
+        div {
+        /*cuando quiero que ocupe más filas o columnas de las establecidas*/
+            /*indicarle a un elemento en qué línea de columna empieza y en cuál acaba (una grid con 3 columnas, tiene 4 líneas)*/
+            /*regla general: una rejilla empieza en "línea=nºrejilla" y acaba en "línea=(nºrejilla+1)"*/
+                grid-column: 1 / 3; /*empieza en línea 1 y acaba en línea 3, es decir, ocupa 2 columnas*/
+                grid-column: 1 / span 2; /*empieza en línea 1 y tiene una amplitud de 2, es decir, ocupa 2 columnas*/
+
+        /*cuando quiero que respete las filas o columnas establecidas 
+            /*incar a un elemento que ocupe cualquier fila*/
+                grid-row: 1; /*ocupa fila 1. Es igual que poner "grid-row: 1 / 2"*/
+                grid-row: 3; /*ocupa fila 3. Es igual que poner "grid-row: 3 / 4"*/
+
+        /*Ejemplo*/
+            /*en una grid 3x4 envío el elemento a la columna 2 fila 4*/
+            grid-column:2;
+            grid-row:4;
+        }
+
+    /*trabajar con áreas*/
+        .div1 {
+        /*establecer la primera fila con el mismo elemento (le dimos a las 3 columnas el nombre de "nav")*/
+            grid-area: nav; /*poner nombre sin comillas*/
+        }
+        .div2 { 
+        /*establecer segundo elemento en fila 2, columna 1 (tenía nombre "content1" eb ejemplo anterior)*/
+            grid-area: content1;
+        }
+        .div3 {
+            /*establecer segundo elemento en fila 2, columna 2 (tenía nombre "content2" en ejemplo anterior)*/
+                grid-area: content2;
+        }
+    
+/**DEGRADADOS Y SOMBRAS**/
+    /*degradado lineal*/
+        div {
+        /*se indica hacia la dirección que queremos que se aplique y los colores*/
+            background: linear-gradient(to right, red, yellow);
+        
+        /*se puede manipular el porcentaje del div que queremos que se vea un color*/
+            background: linear-gradient(to right, red, yellow 20%, red), url("imagen"); /*se pueden añadir más capas como una foto*/
+        }
+
+    /*degradado radial*/
+        div {
+        /*siempre empieza desde el centro por lo que no se le indica la dirección*/
+            background: radial-gradient(red, yellow);
+        }
+
+    /*sombra*/
+        div {
+        /*le podemos pasar 4 parámetros en el siguiente orden: sombra en eje x, sombra en eje y, radio de desenfoque, color*/
+            box-shadow: 5px 10px 15px gray;
+        }
+
+/**TRASNFORMACIONES*/
+    /*todas las transformaciones se aplican con el comando transform*/
+    /*para aplicar varias transformaciones al mismo contenedor se hacen en el mismo transform separadas por espacios*/
+        div {
+        /*trasladar. Se le añaden parámetros de (x, y)*/
+            transform: translate(50px, -20px);
+        
+        /*rotar. Se le añade (ángulo)*/
+            transform: rotate(45deg);
+        
+        /*escalar. Parámetro (factor de crecimiento)*/
+            transform: scale(1.7);
+       
+        /*sesgar. Parámetro (ángulo)*/
+            transform: skew(30deg);
+        }
+
+/**TRANSICIONES**/
+    /*animan un elemento html de un estado A a un estado B*/
+        div {
+        /*determinar propiedades que se verán afectadas por la transición*/
+            transition-property: transform /*propiedad css a la que quiero aplicarle la transición*/;
+
+        /*duración de la transición*/
+            transition-duration: 0.5s;
+        
+        /*tiempo de retardo en comenzar la transición*/
+            transition-delay: 1s;
+
+        /*tipo de transición que va a realizar alterando los tiempos de cambio. Cambio linear sería por defecto. Siempre misma velocidad en los cambios*/
+            transition-timing-function: ease-in-out;
+
+        /*shortcut de las anteriores*/
+            transition: transform 0.5s ease-in; /*si queremos que se aplique a todas las propiedades se le indica mediante "all"*/
+        }
+
+/**ANIMACIONES*/
+/*PROPIEDADES DE ANIMATION*/
+        div {
+        /*llamamos a la animación que hemos creado*/
+            animation-name: nombreIdentificador;
+        
+        /*tiempo que tarda en completar la animación*/
+            animation-duration: 3s;
+
+        /*veces que queremos que se repita nuestra animación*/
+            animation-iteration-count: infinite;
+
+        /*introducir retardo en la animación*/
+            animation-delay: 2s;
+        
+        /*para repetir la secuencia de alante hacia atrás*/
+            animation-direction: alternate;    
+        }
+
+/*CREAR UNA ANIMACIÓN*/
+    /*iniciar la animación e identificarla con un nombre*/
+        @keyframes nombreIdentificador {
+            /*establecer condiciones iniciales de nuestro contenedor*/
+                from{
+                    margin-left: 100%;
+                }
+
+            /*establecer condiciones intermedias. Esta condiciones se mantienen hasta llegar al "to" donde se aplican estrictamente
+            las propiedades que hayan en ese "to" (en el ejemplo, se volvería rojo pero finalizaría negro porque en "to" no le hemos cambiado el color*/
+                50%{
+                    color:red;
+                }
+            
+            /*establecer condiciones finales de nuestro contenedor*/
+                to{
+                    margin-left: 0%;
+                }
+        }
