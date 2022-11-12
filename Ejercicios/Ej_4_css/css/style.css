@@ -1,0 +1,106 @@
+/* general */
+
+* {
+    box-sizing: border-box;
+    color: rgb(187, 255, 250);
+    
+}
+
+.caja {
+    
+    border: 2px solid gray;
+    padding: 10px;  
+    
+    
+}
+
+/* body */
+
+
+
+
+body {
+    background-image: url(../image/fondo2.jpg) ;
+    font-family: 'Courier New', Courier, monospace;
+    /* background-position: center bottom; */
+    background-size: cover;
+}
+
+/* header */
+
+header {
+    margin-bottom: 20px;
+    
+}
+
+.header {
+    position: relative;
+    
+}
+
+.caja form {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -17px;
+    
+}
+
+.header input {
+    height: -20px;
+}
+
+/* aside  */
+
+aside {
+    width: 25%;
+    float: left;
+}
+
+.news > a, .news span {
+    display: block;
+}
+
+/* Articulos */
+
+img.image {
+    margin: 2px;
+    padding: 3px;
+    border-color: rgb(203, 230, 254);
+    border: 4px;
+}
+
+section {
+    float: right;
+    width: 73%;
+}
+
+.contenedor-centro {
+    float: left;
+    width: 75%;
+    
+}
+
+.article img {
+    float: left;
+    margin-left: 20px;
+}
+
+.contenedor-lado {
+    float: left;
+    
+    width: 25%;
+}
+
+.clear {
+    clear: both;
+}
+/* footer  */
+
+footer {
+    margin-top: 20px;
+}
+
+footer span {
+    float: right;
+}
