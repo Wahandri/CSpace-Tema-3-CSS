@@ -1,127 +1,29 @@
-* {
-    color: #5a3612;
-    font-style:oblique;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-}
-
-header {
-    
-    border-radius: 25px;
-    border-width: 3px;
-    border-color: #FAB977;
-    border-style: solid;
-}
-
-.title {
-    position: relative;
-    left: 50%;
-}
-
 body {
-    /* border: 5px rgb(232, 190, 105) solid; */
-    /* background-image: url("fondo.jpg");
-    background-position: center;
-    border-color: #FAB977;
-     */
+    background-color: antiquewhite;
 }
 
-article {
-    border-radius: 25px;
-    border-width: 3px;
-    border-color: #FAB977;
-    border-style: solid;
+.flex-container {
+    flex-flow: row wrap;
+    display: flex;
+    justify-content:space-between;
+
+    border: 2px solid black;
+    padding: 20px;
+    background-color: azure;
+    
 }
 
-.parent {
-    height: 300px;
-    border: 15px solid tomato;
-    position: relative;
-}
-.p-1 {
-    margin: auto;
-}
-
-
-
-.child {
-    height: 50px;
-    width: 50px;
-    background-color: blue;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -25px;
-    margin-top: -25px;
-}
-.article-1 {
-    top: 100px;
-}
-
-
-
-.posicionF {
-    border: 5px solid green;
-}
-
-.pos-1 {
-    background-color: aqua;
-    height: 100px;
-    width: 33.3%;
-
-    float: right;
-}
-
-.pos-2 {
-    background-color: rgb(16, 115, 115);
-    height: 100px;
-    width: 33.3%;   
-
-    float: right;
-}
-
-.pos-3 {
-    background-color: rgb(5, 58, 58);
-    height: 150px;
-    width: 100%;   
-
-}
-
-.pos-4 {
-    background-color: rgb(1, 37, 70);
-    height: 100px;
-    width: 100%;   
-
-    clear: right;
-}
-
-.uno {
-    border-radius: 25px;
-    border-width: 3px;
-    border-color: #FAB977;
-    border-style: solid;
-}
-.dos {
-    border-radius: 25px;
-    border-width: 3px;
-    border-color: #FAB977;
-    border-style: solid;
-}
-
-.tres {
-    border-radius: 25px;
-    border-width: 3px;
-    border-color: #FAB977;
-    border-style: solid;
-}
-
-.cuatro {
-    border-radius: 25px;
-    border-width: 3px;
-    border-color: #FAB977;
-    border-style: solid;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+.caja {
+    
+    border: 1px solid rgb(131, 95, 51);
+    background-color: aquamarine;
+    color: blue;
+    font-family: 'Courier New', Courier, monospace;
+    width: 120px;
+    height: 120;
+    font-weight: bold;
+    line-height: 120px;
+    text-align: center;
+    margin: 5px;
+    
 }
