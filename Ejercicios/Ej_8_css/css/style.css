@@ -1,7 +1,33 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     background-color: rgb(219, 218, 218);
+    
 }
+
+.#buscar {
+    z-index: -1;
+}
+
+#logo {
+    z-index: 1;
+    
+    animation-name: gift;
+    animation-duration: 3s; 
+    animation-iteration-count: 1;
+ }
+    @keyframes gift {
+ 
+     from {
+         margin-left: 100%;
+ 
+     }
+ 
+     to {
+         margin-left: 0%;
+         rotate: -360deg;
+     }
+ 
+ }
 
 div.content {
     display: grid;
